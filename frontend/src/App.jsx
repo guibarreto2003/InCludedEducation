@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import MaterialCard from './components/MaterialCard'
 import translations from '../data/translations'
-
+import materials from '../data/materials'
 
 function App() {
   const [language, setLanguage] = useState('en')
@@ -11,27 +11,11 @@ function App() {
   const [showMaterials, setShowMaterials] = useState(false)
   const [showLanguage, setShowLanguage] = useState(false)
 
-  const materials = [
-  {
-    id: 1,
-    grade: '6th Grade',
-    subject: 'Reading Interpretation'
-  },
 
-  {
-    id: 2,
-    grade: '9th Grade',
-    subject: 'Chronicle'
-  },
 
-  {
-    id: 3,
-    grade: 'High School',
-    subject: 'Grammar'
-  }
-]
-  
   return (
+    
+    {/* Button system to switch between languages */},
     <div className="container">
       <div className='language-selector'>
         <button onClick={() => setShowLanguage(!showLanguage)}>
@@ -54,6 +38,9 @@ function App() {
         </button>
       </div>
     )}
+    
+    
+    {/*The Interface*/},
     </div> 
       
       <h1>{text.title}</h1>
@@ -73,6 +60,7 @@ function App() {
             key={material.id}
             grade={material.grade}
             subject={material.subject}
+            image={material.image}
           />
         ))}
       </div>

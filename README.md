@@ -11,3 +11,7 @@ A platform that allows teachers to access, organize and download educational mat
 - HTML5
 - Git
 - GitHub
+
+## Preview
+
+![Homepage](./frontend/src/assets/screenshots/homepage.png)
