@@ -1,10 +1,16 @@
+import { useState } from 'react'
 import './App.css'
 import MaterialCard from './components/MaterialCard'
-
+import translations from '../data/translations'
 
 
 function App() {
+  const [language, setLanguage] = useState('en')
+  const text = translations[language]
   
+  const [showMaterials, setShowMaterials] = useState(false)
+  const [showLanguage, setShowLanguage] = useState(false)
+
   const materials = [
   {
     id: 1,
@@ -25,20 +31,42 @@ function App() {
   }
 ]
   
-
-
   return (
     <div className="container">
-      <h1>InCludedEducation</h1>
+      <div className='language-selector'>
+        <button onClick={() => setShowLanguage(!showLanguage)}>
+          {text.languageLabel}
+        </button>
+
+      {showLanguage && (
+      <div className='language-options'>
+        <button 
+          className= {language === 'en' ? 'active-language' : ''}
+          onClick={() => setLanguage('en')}
+        >
+          {text.english}
+        </button>
+        <button 
+          onClick={() => setLanguage('pt')}
+          className= {language === 'pt' ? 'active-language' : ''}
+        >
+          {text.portuguese}
+        </button>
+      </div>
+    )}
+    </div> 
+      
+      <h1>{text.title}</h1>
       
       <p className="description">
-        A platform that allows teachers to access,
-        organize and download educational materials.
+        {text.description}
       </p>
 
-      <button>
-        View Materials
+      <button onClick={() => setShowMaterials(!showMaterials)}>
+        {text.button}
       </button>
+    
+    {showMaterials && (
       <div className='materials'>
         {materials.map(material => (
           <MaterialCard
@@ -48,7 +76,7 @@ function App() {
           />
         ))}
       </div>
-    
+    )}
     
     </div>
   )

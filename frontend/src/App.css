@@ -43,6 +43,8 @@ button {
   cursor: pointer;
 
   transition: 0.2s;
+
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 button:hover {
@@ -79,4 +81,35 @@ button:hover {
 
 .card p {
   color: #4b5563;
+}
+
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10x;
+
+  
+
+  gap: 10px;
+}
+
+.language-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.language-selector button {
+  width: 100%;
+}
+
+.active-language {
+  border: 2px solid rgb(21, 50, 216);  
 }
