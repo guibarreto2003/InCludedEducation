@@ -1,4 +1,7 @@
 import './App.css'
+import MaterialCard from './components/MaterialCard'
+
+
 
 function App() {
   
@@ -38,10 +41,11 @@ function App() {
       </button>
       <div className='materials'>
         {materials.map(material => (
-          <div className='card' key={material.id}>
-            <h3>{material.grade}</h3>
-            <p>{material.subject}</p>
-          </div>
+          <MaterialCard
+            key={material.id}
+            grade={material.grade}
+            subject={material.subject}
+          />
         ))}
       </div>
     
