@@ -6,22 +6,22 @@ import grammarImage from '../src/assets/grammar.jpg'
 const materials = [
   {
     id: 1,
-    grade: '6th Grade',
-    subject: 'Reading Interpretation',
+    gradeKey: 'sixthGrade',
+    subjectKey: 'readingInter',
     image: readingImage
 },
 
   {
     id: 2,
-    grade: '9th Grade',
-    subject: 'Chronicle',
+    gradeKey: 'ninethGrade',
+    subjectKey: 'chronicle',
     image: chronicleImage
   },
 
   {
     id: 3,
-    grade: 'High School',
-    subject: 'Grammar',
+    gradeKey: 'HighSchool',
+    subjectKey: 'grammar',
     image: grammarImage
   }
 ]

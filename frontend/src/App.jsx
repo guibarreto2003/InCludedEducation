@@ -58,8 +58,8 @@ function App() {
         {materials.map(material => (
           <MaterialCard
             key={material.id}
-            grade={material.grade}
-            subject={material.subject}
+            grade={text[material.gradeKey]}
+            subject={text[material.subjectKey]}
             image={material.image}
           />
         ))}
