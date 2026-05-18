@@ -22,25 +22,32 @@ function App() {
           {text.languageLabel}
         </button>
 
-      {showLanguage && (
-      <div className='language-options'>
+      
+      <div className={`language-options ${showLanguage ? 'show' : ''}`}>
         <button 
+          onClick={() => {
+            setLanguage('en')
+            setShowLanguage(false)
+        }}
           className= {language === 'en' ? 'active-language' : ''}
-          onClick={() => setLanguage('en')}
         >
           {text.english}
         </button>
+        
         <button 
-          onClick={() => setLanguage('pt')}
+          onClick={() => {
+            setLanguage('pt'),
+            setShowLanguage(false)}  
+        }
           className= {language === 'pt' ? 'active-language' : ''}
         >
           {text.portuguese}
         </button>
       </div>
-    )}
     
     
-    {/*The Interface*/},
+    
+    {/*The Interface*/}
     </div> 
       
       <h1>{text.title}</h1>
@@ -53,8 +60,8 @@ function App() {
         {text.button}
       </button>
     
-    {showMaterials && (
-      <div className='materials'>
+    
+      <div className={`materials ${showMaterials ? 'show' : ''}`}>
         {materials.map(material => (
           <MaterialCard
             key={material.id}
@@ -64,7 +71,7 @@ function App() {
           />
         ))}
       </div>
-    )}
+    
     
     </div>
   )
