@@ -3,56 +3,26 @@ import '../App.css'
 import MaterialCard from '../components/MaterialCard'
 import translations from '../data/translations'
 import materials from '../data/materials'
+import LanguageSelector from '../components/LanguageSelector'
 
 
 
-function Home() {
-  const [language, setLanguage] = useState('en')
-  const text = translations[language]
+function Home({language, setLanguage}) {
   
+  const text = translations[language]
   const [showMaterials, setShowMaterials] = useState(false)
-  const [showLanguage, setShowLanguage] = useState(false)
-
-
-
+  
   return (
-    
-    
-    <div className="container">
-      {/* Button system to switch between languages */}
-      <div className='language-selector'>
-        <button onClick={() => setShowLanguage(!showLanguage)}>
-          {text.languageLabel}
-        </button>
-
+     <div className="container">
       
-      <div className={`language-options ${showLanguage ? 'show' : ''}`}>
-        <button 
-          onClick={() => {
-            setLanguage('en')
-            setShowLanguage(false)
-        }}
-          className= {language === 'en' ? 'active-language' : ''}
-        >
-          {text.english}
-        </button>
-        
-        <button 
-          onClick={() => {
-            setLanguage('pt'),
-            setShowLanguage(false)}  
-        }
-          className= {language === 'pt' ? 'active-language' : ''}
-        >
-          {text.portuguese}
-        </button>
-      </div>
+      {/*Language Selector*/}
+      <LanguageSelector
+        language={language}
+        setLanguage={setLanguage}
+      /> 
+      {/*Language Selector Ends*/}
     
-    
-    
-    {/*The Interface*/}
-    </div> 
-      
+      {/*The Interface*/}
       <h1>{text.title}</h1>
       
       <p className="description">
@@ -75,10 +45,8 @@ function Home() {
           />
         ))}
       </div>
-    
-    
     </div>
-  )
+  ) // The Interface Ends 
 }
 
 export default Home

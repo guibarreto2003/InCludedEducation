@@ -164,3 +164,47 @@ button:hover {
 .card-link {
   text-decoration: none;
 }
+
+.details-container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+}
+
+.details-image {
+  width: 350px;
+  max-width: 90%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  background-color: #2563eb;
+  color: white;
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: #1d4ed8;
+
+  transform:scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+}

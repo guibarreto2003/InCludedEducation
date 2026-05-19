@@ -2,7 +2,6 @@ import readingImage from '../assets/reading.jpg'
 import chronicleImage from '../assets/chronicle.jpg'
 import grammarImage from '../assets/grammar.jpg'
 
-
 const materials = [
   {
     id: 1,
