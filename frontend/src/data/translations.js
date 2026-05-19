@@ -24,7 +24,7 @@ const translations = {
         
         // (1)
         title: 'InCludedEducation',
-        description: 'Uma plataforma que permite professores acessar, organizar e fazer download de materias educacionais.',
+        description: 'Uma plataforma que permite professores acessar, organizar e fazer download de materiais educacionais.',
         button: 'Ver materiais',
         
         // (2)

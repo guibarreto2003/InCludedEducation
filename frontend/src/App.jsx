@@ -1,79 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import MaterialCard from './components/MaterialCard'
-import translations from '../data/translations'
-import materials from '../data/materials'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import MaterialDetails from './pages/MaterialDetails'
+
 
 function App() {
-  const [language, setLanguage] = useState('en')
-  const text = translations[language]
-  
-  const [showMaterials, setShowMaterials] = useState(false)
-  const [showLanguage, setShowLanguage] = useState(false)
-
-
-
   return (
-    
-    {/* Button system to switch between languages */},
-    <div className="container">
-      <div className='language-selector'>
-        <button onClick={() => setShowLanguage(!showLanguage)}>
-          {text.languageLabel}
-        </button>
-
-      
-      <div className={`language-options ${showLanguage ? 'show' : ''}`}>
-        <button 
-          onClick={() => {
-            setLanguage('en')
-            setShowLanguage(false)
-        }}
-          className= {language === 'en' ? 'active-language' : ''}
-        >
-          {text.english}
-        </button>
-        
-        <button 
-          onClick={() => {
-            setLanguage('pt'),
-            setShowLanguage(false)}  
-        }
-          className= {language === 'pt' ? 'active-language' : ''}
-        >
-          {text.portuguese}
-        </button>
-      </div>
-    
-    
-    
-    {/*The Interface*/}
-    </div> 
-      
-      <h1>{text.title}</h1>
-      
-      <p className="description">
-        {text.description}
-      </p>
-
-      <button onClick={() => setShowMaterials(!showMaterials)}>
-        {text.button}
-      </button>
-    
-    
-      <div className={`materials ${showMaterials ? 'show' : ''}`}>
-        {materials.map(material => (
-          <MaterialCard
-            key={material.id}
-            grade={text[material.gradeKey]}
-            subject={text[material.subjectKey]}
-            image={material.image}
-          />
-        ))}
-      </div>
-    
-    
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/material/:id" element={<MaterialDetails />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

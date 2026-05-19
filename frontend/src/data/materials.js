@@ -1,6 +1,6 @@
-import readingImage from '../src/assets/reading.jpg'
-import chronicleImage from '../src/assets/chronicle.jpg'
-import grammarImage from '../src/assets/grammar.jpg'
+import readingImage from '../assets/reading.jpg'
+import chronicleImage from '../assets/chronicle.jpg'
+import grammarImage from '../assets/grammar.jpg'
 
 
 const materials = [
