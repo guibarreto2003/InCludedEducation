@@ -6,20 +6,20 @@ const materials = [
   {
     id: 1,
     gradeKey: 'sixthGrade',
-    subjectKey: 'readingInter',
+    subjectKey: 'readingInterpretation',
     image: readingImage
 },
 
   {
     id: 2,
-    gradeKey: 'ninethGrade',
+    gradeKey: 'ninthGrade',
     subjectKey: 'chronicle',
     image: chronicleImage
   },
 
   {
     id: 3,
-    gradeKey: 'HighSchool',
+    gradeKey: 'highSchool',
     subjectKey: 'grammar',
     image: grammarImage
   }

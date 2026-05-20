@@ -1,46 +1,47 @@
 const translations = {
-    en: {
-        
-        //Interface translation (1)
-        title: 'InCludedEducation',
-        description: 'A platform that allows teachers to access, organize and download educational materials.',
-        button: 'View Materials',
+  en: {
 
-        //Language selector translation (2)
-        languageLabel: 'Language',
-        english: 'English',
-        portuguese: 'Portuguese',
+    // Interface translation
+    title: 'InCludedEducation',
+    description: 'A platform that allows teachers to access, organize and download educational materials.',
+    button: 'View Materials',
 
-        //Cards translation (3)
-        sixthGrade: '6th Grade',
-        ninethGrade: '9th Grade',
-        HighSchool: 'High School',
-        readingInter: 'Reading Interpretation',
-        chronicle: 'Chronicle',
-        grammar: 'Grammar'
-    },
+    // Language selector translation
+    languageLabel: 'Language',
+    english: 'English',
+    portuguese: 'Portuguese',
 
-    pt: {
-        
-        // (1)
-        title: 'InCludedEducation',
-        description: 'Uma plataforma que permite professores acessar, organizar e fazer download de materiais educacionais.',
-        button: 'Ver materiais',
-        
-        // (2)
-        languageLabel: 'Idioma',
-        english: 'Inglês',
-        portuguese: 'Português',
-    
-        // (3)
-        sixthGrade: '6º Ano',
-        ninethGrade: '9º Ano',
-        HighSchool:'Ensino Médio',
-        readingInter: 'Interpretação de texto',
-        chronicle: 'Crônica',
-        grammar: 'Gramática'
+    // Cards translation
+    sixthGrade: '6th Grade',
+    ninthGrade: '9th Grade',
+    highSchool: 'High School',
 
-    }
+    readingInterpretation: 'Reading Interpretation',
+    chronicle: 'Chronicle',
+    grammar: 'Grammar'
+  },
+
+  pt: {
+
+    // Interface translation
+    title: 'InCludedEducation',
+    description: 'Uma plataforma que permite professores acessar, organizar e fazer download de materiais educacionais.',
+    button: 'Ver materiais',
+
+    // Language selector translation
+    languageLabel: 'Idioma',
+    english: 'Inglês',
+    portuguese: 'Português',
+
+    // Cards translation
+    sixthGrade: '6º Ano',
+    ninthGrade: '9º Ano',
+    highSchool: 'Ensino Médio',
+
+    readingInterpretation: 'Interpretação de Texto',
+    chronicle: 'Crônica',
+    grammar: 'Gramática'
+  }
 }
 
 export default translations

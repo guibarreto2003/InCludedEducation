@@ -208,3 +208,53 @@ button:hover {
   transition: 0.3s;
   cursor: pointer;
 }
+
+.search-input {
+  width: 300px;
+  max-width: 90%;
+
+  padding: 12px 16px;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+
+  font-size: 16px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  outline: none;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 25px;
+}
+
+.filter-bar button {
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  color: rgb(48, 48, 48);
+  background-color: #e5e7eb;
+
+  transition: 0.3s;
+}
+
+.active-filter {
+  background-color: #2563eb !important;
+  color: white !important;
+
+  transform: scale(1.05);
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}

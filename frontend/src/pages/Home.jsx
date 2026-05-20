@@ -4,6 +4,9 @@ import MaterialCard from '../components/MaterialCard'
 import translations from '../data/translations'
 import materials from '../data/materials'
 import LanguageSelector from '../components/LanguageSelector'
+import SearchBar from '../components/SearchBar'
+import FilterBar from '../components/FilterBar'
+import filterMaterials from '../utils/filterMaterials'
 
 
 
@@ -11,6 +14,16 @@ function Home({language, setLanguage}) {
   
   const text = translations[language]
   const [showMaterials, setShowMaterials] = useState(false)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedFilter, setSelectedFilter] = useState('All')
+  const filteredMaterials = filterMaterials(
+    materials,
+    searchTerm,
+    selectedFilter,
+    text
+  )
+  
+  
   
   return (
      <div className="container">
@@ -29,13 +42,28 @@ function Home({language, setLanguage}) {
         {text.description}
       </p>
 
+      {/*Search Bar */}
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+      {/*Search Bar Ends*/}
+      
+      {/*Filter Bar*/}
+      <FilterBar
+        selectedFilter={selectedFilter}
+        setSelectedFilter={setSelectedFilter}
+      />
+      {/*Filter Bar Ends*/}
+      
+      
       <button onClick={() => setShowMaterials(!showMaterials)}>
         {text.button}
       </button>
     
     
       <div className={`materials ${showMaterials ? 'show' : ''}`}>
-        {materials.map(material => (
+        {filteredMaterials.map(material => (
           <MaterialCard
             key={material.id}
             id={material.id}
