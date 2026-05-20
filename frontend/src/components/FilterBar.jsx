@@ -1,22 +1,23 @@
-function FilterBar ({selectedFilter, setSelectedFilter}) {
+function FilterBar ({selectedFilter, setSelectedFilter, text}) {
 
     const filters = [
-        'English',
-        'Portuguese',
-        'Literature',
-        'Writing',
-        'Grammar',
-        'Reading Interpretation',
-        'Chronicle',
-        'Poetry',
-        'Short Story',
-        'Novel',
-        'Linguistics',
-        'Textual Genres',
-        'Essay',
-        'Argumentation',
-        'History',
-        'Geography'
+        'all',
+        'english',
+        'portuguese',
+        'literature',
+        'writing',
+        'grammar',
+        'readingInterpretation',
+        'chronicle',
+        'poetry',
+        'shortStory',
+        'novel',
+        'linguistics',
+        'textualGenres',
+        'essay',
+        'argumentation',
+        'history',
+        'geography'
     ]
 
 
@@ -25,10 +26,10 @@ function FilterBar ({selectedFilter, setSelectedFilter}) {
         <div className="filter-bar">
             {filters.map(filter => (
                 <button
-                    key={filter}
+                    key={text[filter]}
                     onClick={() => setSelectedFilter(
                         selectedFilter === filter
-                            ? 'All'
+                            ? 'all'
                             : filter
                     )
                     }
@@ -38,7 +39,7 @@ function FilterBar ({selectedFilter, setSelectedFilter}) {
                             : ''
                     }
                 >
-                {filter}
+                {text[filter]}
                 </button>
             ))}
         </div>

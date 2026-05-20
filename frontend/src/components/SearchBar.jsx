@@ -1,9 +1,9 @@
-function SearchBar ({searchTerm, setSearchTerm}) {
+function SearchBar ({searchTerm, setSearchTerm, text}) {
 
     return (
         <input
         type="text"
-        placeholder="Search materials"
+        placeholder={text.searchMaterials}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input"

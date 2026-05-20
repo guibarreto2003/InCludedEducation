@@ -13,9 +13,9 @@ function filterMaterials(
                 .includes(searchTerm.toLowerCase())
     
         const matchesFilter =
-            selecetedFilter === 'All'
+            selecetedFilter === 'all'
                 ? true
-                : text[material.subjectKey] === selecetedFilter
+                : material.subjectKey === selecetedFilter
         
         return matchesSearch && matchesFilter
     })

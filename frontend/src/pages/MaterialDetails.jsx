@@ -1,8 +1,16 @@
 import { useParams, Link } from 'react-router-dom'
+
 import materials from '../data/materials'
-import translations from '../data/translations'
-import '../App.css'
+import MaterialPreview from '../components/materials/MaterialPreview'
+import MaterialAuthor from '../components/materials/MaterialAuthor'
+import MaterialDescription from '../components/materials/MaterialDescription'
+import MaterialReviews from '../components/materials/MaterialReviews'
+import PurchaseButton from '../components/PurchaseButton'
+
 import LanguageSelector from '../components/LanguageSelector'
+
+import '../App.css'
+
 
 function MaterialDetails({language, setLanguage}) {
     
@@ -10,8 +18,6 @@ function MaterialDetails({language, setLanguage}) {
     const material = materials.find(
         material => material.id === Number(id)
     )
-
-    const text = translations[language]
 
     return (
         <div className='details-container'>
@@ -22,17 +28,21 @@ function MaterialDetails({language, setLanguage}) {
             />
             {/*LANGUAGE SELECTOR ENDS*/}
             
+            <MaterialPreview material={material} />
+
+            <MaterialAuthor material={material} />
+
+            <MaterialDescription material={material} />
+
+            <MaterialReviews material={material} />
+
+            <PurchaseButton />
+
             <Link to="/" className='back-button'>
                 Back
             </Link>
             
-            <h1>{text[material.gradeKey]}</h1>
-            <img 
-                src={material.image}
-                alt={text[material.subjectKey]}
-                width="300"
-            />            
-            <p>{text[material.subjectKey]}</p>        
+                   
         </div>
     )
 }

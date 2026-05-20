@@ -1,21 +1,23 @@
 import { useState } from 'react'
-import '../App.css'
-import MaterialCard from '../components/MaterialCard'
-import translations from '../data/translations'
+
+import MaterialCard from '../components/materials/MaterialCard'
 import materials from '../data/materials'
+
+import translations from '../data/translations'
 import LanguageSelector from '../components/LanguageSelector'
+
 import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
 import filterMaterials from '../utils/filterMaterials'
 
-
+import '../App.css'
 
 function Home({language, setLanguage}) {
   
   const text = translations[language]
   const [showMaterials, setShowMaterials] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedFilter, setSelectedFilter] = useState('All')
+  const [selectedFilter, setSelectedFilter] = useState('all')
   const filteredMaterials = filterMaterials(
     materials,
     searchTerm,
@@ -46,6 +48,7 @@ function Home({language, setLanguage}) {
       <SearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
+        text={text}
       />
       {/*Search Bar Ends*/}
       
@@ -53,6 +56,7 @@ function Home({language, setLanguage}) {
       <FilterBar
         selectedFilter={selectedFilter}
         setSelectedFilter={setSelectedFilter}
+        text={text}
       />
       {/*Filter Bar Ends*/}
       
