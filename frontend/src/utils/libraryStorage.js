@@ -1,43 +1,88 @@
+const LIBRARY_KEY = 'library'
+
 function getLibrary() {
 
-    const library =
-        localStorage.getItem('library')
+    try {
+        const library =
+            localStorage.getItem(LIBRARY_KEY)
+        
+        if (!library) {
+            return []
+        }
 
-    return library
-        ? JSON.parse(library)
-        : []
+        return JSON.parse(library)
+
+}   catch (error) {
+
+        console.error(
+            'Error reading library',
+            error
+        )
+
+        return[]
+    }
 }
+    
 
 function addToLibrary(material) {
     
-    const library = getLibrary()
+    if (!material || !material.id) {
+        return false
+    }
 
-    const alreadyExists = library.some(
-        item => item.id === material.id
-    )
+    try {
+        const library = getLibrary()
+        const alreadyExists = library.some(
+            item => item.id === material.id
+        )
 
-    if (alreadyExists) return
+        if (alreadyExists) {
+            return true
+        }
 
-    library.push(material)
+        const updatedLibrary = [
+            ...library,
+            material
+        ]
 
-    localStorage.setItem(
-        'library',
-        JSON.stringify(library)
-    )
+        localStorage.setItem(
+            LIBRARY_KEY,
+            JSON.stringify(updatedLibrary)
+        )
+
+        return true
+    
+    }   catch (error) {
+            console.error(
+                'Error adding material',
+                error
+            )
+
+            return false
+    }
 }
 
 function removeFromLibrary(id) {
 
-    const library = getLibrary()
+    try {
+        const library = getLibrary()
 
-    const updatedLibrary = library.filter(
-        item => item.id !== id
-    )
+        const updatedLibrary = library.filter(
+            item => item.id != id
+        )
 
-    localStorage.setItem(
-        'library',
-        JSON.stringify(updatedLibrary)
-    )
+        localStorage.setItem(
+            LIBRARY_KEY,
+            JSON.stringify(updatedLibrary)
+        )
+    
+    }   catch (error) {
+        
+        console.error(
+            'Error removing material',
+            error
+        )
+    }
 }
 
 function isInLibrary(id) {

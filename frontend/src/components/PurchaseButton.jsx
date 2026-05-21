@@ -17,7 +17,10 @@ function PurchaseButton({ material, text }) {
     function handlePurchase() {
         
         if (added) return
-        addToLibrary(material)
+        const wasAdded = addToLibrary(material)
+
+        if (!wasAdded) return
+
         setAdded(true)
         setShowPopup(true)
 
