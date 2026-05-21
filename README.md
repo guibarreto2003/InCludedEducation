@@ -1,6 +1,8 @@
 # InCludedEducation
 
-A platform that allows teachers to access, organize and download educational materials.
+A responsive educational platform that allows teachers to access, organize and explore educational materials in a modern and scalable interface.
+
+---
 
 ## Technologies Used
 
@@ -12,42 +14,98 @@ A platform that allows teachers to access, organize and download educational mat
 - Git
 - GitHub
 
+---
+
 ## Preview
 
 ![Homepage](./frontend/src/assets/screenshots/homepage.png)
 
-## DEMO
+---
 
-![Demo](./frontend/src/assets/screenshots/demo.gif)
+## Demo
+
+![Demo](./frontend/src/assets/screenshots/demo_2.gif)
+
+---
 
 ## Features
 
-- Dynamic materials cards
+- Dynamic materials catalog
+- Responsive material details page
 - Multilingual interface (English and Portuguese)
+- Search system
+- Dynamic filtering system
 - Reusable React components
-- Material details page
 - React Router navigation
-- Responsive cards layout
-- Modularized language selector
+- Animated purchase popup
+- Modular CSS architecture
+- Scalable catalog layout
+- Responsive interface for desktop and mobile devices
+
+---
 
 ## Project Structure
 
 ```txt
 src/
-    assets/
-    components/
-    data/
-    pages/
+│
+├── assets/
+│
+├── components/
+│   ├── MaterialsInfo/
+│   ├── FilterBar.jsx
+│   ├── SearchBar.jsx
+│   ├── LanguageSelector.jsx
+│   └── PurchaseButton.jsx
+│
+├── data/
+│   ├── materials,js
+│   ├── translations.js
+├── pages/
+│   ├── Home.jsx
+│   └── MaterialDetails.jsx
+│
+├── utils/
+│   └── filterMaterials.js
+│
+├── App.jsx
+└── main.jsx
 ```
+
+---
+
+## Responsive Design
+
+The platform is fully responsive and adapts to:
+- Desktop
+- Tablet
+- Mobile devices
+
+---
+
+## Architecture
+
+This project follows a modular component-based architecture using:
+- Reusable React components
+- Separated CSS files per component
+- Utility-based filtering system
+- Dynamic multilingual structure
+
+---
 
 ## Future Improvements
 
-- Materials download system
-- Search and filters
 - Backend integration
 - User authentication
-- Teacher uploads
-- Database integration
+- Materials upload system
+- User library system
+- Favorites system
+- Advanced search filters
+- Pagination system
+- Material rating system
+- Cloud database integration
+
+---
 
 ## Author
 
