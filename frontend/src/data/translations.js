@@ -12,6 +12,7 @@ const translations = {
     reviews: 'Reviews',
     imageUnavailable: 'Image unavailable',
     acquireMaterial: 'Acquire Material',
+    addedToLibrary: 'Added to library',
     materialAddedToLibrary: 'Material added to library',
 
     // Language selector translation
@@ -73,6 +74,7 @@ const translations = {
     reviews: 'Avaliações',
     imageUnavailable: 'Imagem indisponível',
     acquireMaterial: 'Adquirir material',
+    addedToLibrary: 'Adicionado à biblioteca',
     materialAddedToLibrary: 'Material adicionado à biblioteca',
 
     // Language selector translation

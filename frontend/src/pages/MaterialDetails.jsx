@@ -65,7 +65,7 @@ function MaterialDetails({language, setLanguage}) {
             <Link to="/" className="back-button">
                 {text.back}
             </Link>
-            <PurchaseButton text={text} />
+            <PurchaseButton material={material} text={text} />
         </div>
     )
 }

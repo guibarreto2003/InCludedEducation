@@ -1,11 +1,29 @@
-import { useState } from "react"
+import { useState, useEffect, useDebugValue } from "react"
+import {
+    addToLibrary,
+    isInLibrary
+} from '../utils/libraryStorage'
+
 import './PurchaseButton.css'
 
-function PurchaseButton({ text }) {
+function PurchaseButton({ material, text }) {
     
     const [showPopup, setShowPopup] = useState(false)
 
+    const [added, setAdded] = useState(false)
+
+    useEffect(() => {
+
+        setAdded(
+            isInLibrary(material.id)
+        )
+    }, [material.id])
+
     function handlePurchase() {
+        
+        if (added) return
+        addToLibrary(material)
+        setAdded(true)
         setShowPopup(true)
 
         setTimeout(() => {
@@ -27,7 +45,10 @@ function PurchaseButton({ text }) {
                 className="purchase-button"
                 onClick={handlePurchase}
             >
-                {text.acquireMaterial}
+                {added
+                    ? text.addedToLibrary
+                    : text.acquireMaterial
+                }
             </button>
 
         
