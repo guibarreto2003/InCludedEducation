@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import MaterialCard from '../components/materials/MaterialCard'
+import MaterialCard from '../components/MaterialsInfo/MaterialCard'
 import materials from '../data/materials'
 
 import translations from '../data/translations'
@@ -15,7 +15,6 @@ import '../App.css'
 function Home({language, setLanguage}) {
   
   const text = translations[language]
-  const [showMaterials, setShowMaterials] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedFilter, setSelectedFilter] = useState('all')
   const filteredMaterials = filterMaterials(
@@ -36,9 +35,11 @@ function Home({language, setLanguage}) {
         setLanguage={setLanguage}
       /> 
       {/*Language Selector Ends*/}
-    
+    <div className="home-content">
       {/*The Interface*/}
-      <h1>{text.title}</h1>
+      <h1>
+        {text.title}
+      </h1>
       
       <p className="description">
         {text.description}
@@ -60,13 +61,11 @@ function Home({language, setLanguage}) {
       />
       {/*Filter Bar Ends*/}
       
+      </div>
       
-      <button onClick={() => setShowMaterials(!showMaterials)}>
-        {text.button}
-      </button>
     
     
-      <div className={`materials ${showMaterials ? 'show' : ''}`}>
+      <div className='materials'>
         {filteredMaterials.map(material => (
           <MaterialCard
             key={material.id}

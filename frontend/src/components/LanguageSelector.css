@@ -1,0 +1,52 @@
+.language-selector {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 150px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: 10px;
+
+  z-index: 10;
+}
+
+.language-selector button {
+  width: 100%;
+}
+
+.language-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  opacity: 0;
+
+  transform: translateY(-10px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.language-options.show {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+.active-language {
+  border: 2px solid rgb(21, 50, 216);
+}

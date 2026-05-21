@@ -1,0 +1,60 @@
+.material-reviews {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.material-reviews h2 {
+  color: #1f2937;
+  margin: 0;
+}
+
+.reviews-container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.review-card {
+  background-color: white;
+
+  padding: 16px 20px;
+
+  border-radius: 16px;
+
+  text-align: left;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  min-height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.12);
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.12);
+}

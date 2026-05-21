@@ -1,5 +1,6 @@
 import { useState } from "react";
 import translations from "../data/translations";
+import './LanguageSelector.css'
 
 function LanguageSelector ({ language, setLanguage}) {
     

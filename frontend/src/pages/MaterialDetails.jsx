@@ -1,16 +1,17 @@
 import { useParams, Link } from 'react-router-dom'
 
 import materials from '../data/materials'
-import MaterialPreview from '../components/materials/MaterialPreview'
-import MaterialAuthor from '../components/materials/MaterialAuthor'
-import MaterialDescription from '../components/materials/MaterialDescription'
-import MaterialReviews from '../components/materials/MaterialReviews'
+import translations from '../data/translations'
+import MaterialPreview from '../components/MaterialsInfo/MaterialPreview'
+import MaterialAuthor from '../components/MaterialsInfo/MaterialAuthor'
+import MaterialDescription from '../components/MaterialsInfo/MaterialDescription'
+import MaterialReviews from '../components/MaterialsInfo/MaterialReviews'
 import PurchaseButton from '../components/PurchaseButton'
 
 import LanguageSelector from '../components/LanguageSelector'
 
 import '../App.css'
-
+import './MaterialDetails.css'
 
 function MaterialDetails({language, setLanguage}) {
     
@@ -18,6 +19,7 @@ function MaterialDetails({language, setLanguage}) {
     const material = materials.find(
         material => material.id === Number(id)
     )
+    const text = translations[language]
 
     return (
         <div className='details-container'>
@@ -28,21 +30,42 @@ function MaterialDetails({language, setLanguage}) {
             />
             {/*LANGUAGE SELECTOR ENDS*/}
             
-            <MaterialPreview material={material} />
+            <div className="details-layout">
+                <div className="left-column">
+                    <MaterialPreview
+                        material={material}
+                        language={language}
+                        text={text}
+                    />
+                    <MaterialAuthor
+                        material={material}
+                        language={language}
+                        text={text}
+                    />
+                </div>
 
-            <MaterialAuthor material={material} />
+                <div className="center-column">
+                    <MaterialDescription
+                        material={material}
+                        language={language}
+                        text={text}
+                    />
+                </div>
 
-            <MaterialDescription material={material} />
+                <div className="right-column">
+                    <MaterialReviews
+                        material={material}
+                        language={language}
+                        text={text}
+                    />
+                </div>
 
-            <MaterialReviews material={material} />
-
-            <PurchaseButton />
-
-            <Link to="/" className='back-button'>
-                Back
-            </Link>
+            </div>
             
-                   
+            <Link to="/" className="back-button">
+                {text.back}
+            </Link>
+            <PurchaseButton text={text} />
         </div>
     )
 }

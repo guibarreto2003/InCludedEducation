@@ -1,8 +1,9 @@
+import './FilterBar.css'
+
 function FilterBar ({selectedFilter, setSelectedFilter, text}) {
 
     const filters = [
         'all',
-        'english',
         'portuguese',
         'literature',
         'writing',
@@ -16,8 +17,15 @@ function FilterBar ({selectedFilter, setSelectedFilter, text}) {
         'textualGenres',
         'essay',
         'argumentation',
-        'history',
-        'geography'
+        'orthography',
+        'punctuation',
+        'syntax',
+        'morphology',
+        'semantics',
+        'cohesion',
+        'coherence',
+        'brazilianLiterature',
+        'enemWriting'
     ]
 
 

@@ -1,0 +1,30 @@
+.material-author {
+  width: 100%;
+
+  background-color: white;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+}
+
+.material-author h2 {
+  margin-bottom: 15px;
+
+  color: #1f2937;
+}
+
+.author-name {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.author-role {
+  color: #6b7280;
+}

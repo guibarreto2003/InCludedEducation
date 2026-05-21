@@ -1,0 +1,46 @@
+.filter-bar {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.filter-bar button {
+  padding: 10px 16px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background-color: #e5e7eb;
+
+  color: #303030;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.filter-bar button:hover {
+  background-color: #dbeafe;
+}
+
+.active-filter {
+  background-color: #2563eb !important;
+
+  color: white !important;
+
+  transform: scale(1.05);
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.35);
+}

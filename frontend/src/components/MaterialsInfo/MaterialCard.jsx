@@ -1,3 +1,4 @@
+import './MaterialCard.css'
 import { Link } from "react-router-dom"
 
 function MaterialCard(props) {

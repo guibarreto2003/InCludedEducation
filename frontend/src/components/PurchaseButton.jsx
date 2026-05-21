@@ -1,6 +1,7 @@
 import { useState } from "react"
+import './PurchaseButton.css'
 
-function PurchaseButton() {
+function PurchaseButton({ text }) {
     
     const [showPopup, setShowPopup] = useState(false)
 
@@ -13,19 +14,23 @@ function PurchaseButton() {
     }
 
     return (
+        
         <div className="purchase-container">
+            
+            {showPopup && (
+            <div className="purchase-popup">
+                {text.materialAddedToLibrary}
+            </div>
+            )}
+            
             <button
                 className="purchase-button"
                 onClick={handlePurchase}
             >
-                Acquire Material
+                {text.acquireMaterial}
             </button>
 
-        {showPopup && (
-            <div className="purchase-popup">
-                Material added to library
-            </div>
-        )}
+        
 
         </div>
     )
