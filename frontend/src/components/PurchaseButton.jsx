@@ -1,4 +1,4 @@
-import { useState, useEffect, useDebugValue } from "react"
+import { useState } from "react"
 import {
     addToLibrary,
     isInLibrary
@@ -10,14 +10,9 @@ function PurchaseButton({ material, text }) {
     
     const [showPopup, setShowPopup] = useState(false)
 
-    const [added, setAdded] = useState(false)
-
-    useEffect(() => {
-
-        setAdded(
-            isInLibrary(material.id)
-        )
-    }, [material.id])
+    const [added, setAdded] = useState(
+    isInLibrary(material.id)
+)
 
     function handlePurchase() {
         

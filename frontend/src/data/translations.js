@@ -14,7 +14,8 @@ const translations = {
     acquireMaterial: 'Acquire Material',
     addedToLibrary: 'Added to library',
     materialAddedToLibrary: 'Material added to library',
-
+    materialNotFound: 'Material not found',
+    backToHome: 'Back to Home',
     // Language selector translation
     languageLabel: 'Language',
     english: 'English',
@@ -37,7 +38,6 @@ const translations = {
 
     // Portuguese language area filters
     all: 'All',
-    portuguese: 'Portuguese',
     literature: 'Literature',
     writing: 'Writing',
     grammar: 'Grammar',
@@ -58,7 +58,9 @@ const translations = {
     cohesion: 'Cohesion',
     coherence: 'Coherence',
     brazilianLiterature: 'Brazilian Literature',
-    enemWriting: 'ENEM Writing'
+    enemWriting: 'ENEM Writing',
+    home: 'Home',
+    myLibrary: 'My Library'
   },
 
   pt: {
@@ -76,7 +78,8 @@ const translations = {
     acquireMaterial: 'Adquirir material',
     addedToLibrary: 'Adicionado à biblioteca',
     materialAddedToLibrary: 'Material adicionado à biblioteca',
-
+    materialNotFound: 'Material não encontrado',
+    backToHome: 'Voltar ao início',
     // Language selector translation
     languageLabel: 'Idioma',
     english: 'Inglês',
@@ -119,7 +122,9 @@ const translations = {
     cohesion: 'Coesão',
     coherence: 'Coerência',
     brazilianLiterature: 'Literatura brasileira',
-    enemWriting: 'Redação ENEM'
+    enemWriting: 'Redação ENEM',
+    home: 'Início',
+    myLibrary: 'Minha Biblioteca'
   }
 }
 

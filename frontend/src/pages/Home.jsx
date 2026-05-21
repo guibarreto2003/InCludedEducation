@@ -4,7 +4,6 @@ import MaterialCard from '../components/MaterialsInfo/MaterialCard'
 import materials from '../data/materials'
 
 import translations from '../data/translations'
-import LanguageSelector from '../components/LanguageSelector'
 
 import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
@@ -12,7 +11,7 @@ import filterMaterials from '../utils/filterMaterials'
 
 import '../App.css'
 
-function Home({language, setLanguage}) {
+function Home({language}) {
   
   const text = translations[language]
   const [searchTerm, setSearchTerm] = useState('')
@@ -27,15 +26,9 @@ function Home({language, setLanguage}) {
   
   
   return (
-     <div className="container">
+    <div className="container">
       
-      {/*Language Selector*/}
-      <LanguageSelector
-        language={language}
-        setLanguage={setLanguage}
-      /> 
-      {/*Language Selector Ends*/}
-    <div className="home-content">
+      <div className="home-content">
       {/*The Interface*/}
       <h1>
         {text.title}

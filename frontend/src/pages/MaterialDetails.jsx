@@ -8,12 +8,10 @@ import MaterialDescription from '../components/MaterialsInfo/MaterialDescription
 import MaterialReviews from '../components/MaterialsInfo/MaterialReviews'
 import PurchaseButton from '../components/PurchaseButton'
 
-import LanguageSelector from '../components/LanguageSelector'
-
 import '../App.css'
 import './MaterialDetails.css'
 
-function MaterialDetails({language, setLanguage}) {
+function MaterialDetails({language}) {
     
     const { id } = useParams()
     const material = materials.find(
@@ -21,14 +19,28 @@ function MaterialDetails({language, setLanguage}) {
     )
     const text = translations[language]
 
+    if (!material) {
+        return (
+
+            <div className='not-found'>
+
+                    <h1>
+                        {text.materialNotFound}
+                    </h1>
+
+                    <Link
+                        to='/'
+                        className='back-home-button'
+                    >
+                        {text.backToHome}
+                    </Link>
+            </div>
+        )
+    }
+
+
     return (
         <div className='details-container'>
-            {/*LANGUAGE SELECTOR*/}
-            <LanguageSelector
-                language={language}
-                setLanguage={setLanguage}
-            />
-            {/*LANGUAGE SELECTOR ENDS*/}
             
             <div className="details-layout">
                 <div className="left-column">
@@ -62,9 +74,7 @@ function MaterialDetails({language, setLanguage}) {
 
             </div>
             
-            <Link to="/" className="back-button">
-                {text.back}
-            </Link>
+            
             <PurchaseButton material={material} text={text} />
         </div>
     )

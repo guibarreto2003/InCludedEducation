@@ -11,7 +11,7 @@ function Library({ text }) {
 
         <div className="container">
 
-            <h1>My Library</h1>
+            <h1>{text.myLibrary}</h1>
 
             <div className="materials">
 
@@ -20,7 +20,7 @@ function Library({ text }) {
                         key={material.id}
                         id={material.id}
                         grade={text[material.gradeKey]}
-                        subject={text[material.subjectKeu]}
+                        subject={text[material.subjectKey]}
                         image={material.image}
                     />
                 ))}

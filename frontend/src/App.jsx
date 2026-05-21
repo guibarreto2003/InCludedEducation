@@ -4,6 +4,7 @@ import MaterialDetails from './pages/MaterialDetails'
 import { useState } from 'react'
 import Library from './pages/Library'
 import translations from './data/translations'
+import Navbar from './components/Navbar'
 
 function App() {
   
@@ -12,6 +13,12 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        text={text}
+      />
+      
       <Routes>
         <Route 
           path="/" 
