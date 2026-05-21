@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 
 import materials from '../data/materials'
-import translations from '../data/translations'
+import { useLanguage } from '../context/LanguageContext'
 import MaterialPreview from '../components/MaterialsInfo/MaterialPreview'
 import MaterialAuthor from '../components/MaterialsInfo/MaterialAuthor'
 import MaterialDescription from '../components/MaterialsInfo/MaterialDescription'
@@ -11,13 +11,13 @@ import PurchaseButton from '../components/PurchaseButton'
 import '../App.css'
 import './MaterialDetails.css'
 
-function MaterialDetails({language}) {
+function MaterialDetails() {
     
     const { id } = useParams()
     const material = materials.find(
         material => material.id === Number(id)
     )
-    const text = translations[language]
+    const { language, text } = useLanguage()
 
     if (!material) {
         return (
@@ -81,4 +81,3 @@ function MaterialDetails({language}) {
 }
 
 export default MaterialDetails
-

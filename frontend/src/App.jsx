@@ -1,52 +1,22 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import MaterialDetails from './pages/MaterialDetails'
-import { useState } from 'react'
-import Library from './pages/Library'
-import translations from './data/translations'
+
 import Navbar from './components/Navbar'
 
+import Home from './pages/Home'
+import MaterialDetails from './pages/MaterialDetails'
+import Library from './pages/Library'
+
+
 function App() {
-  
-  const [language, setLanguage] = useState('en')
-  const text = translations[language]
 
   return (
     <BrowserRouter>
-      <Navbar
-        language={language}
-        setLanguage={setLanguage}
-        text={text}
-      />
+      <Navbar />
       
       <Routes>
-        <Route 
-          path="/" 
-          element={
-            <Home  
-              language={language}
-              setLanguage={setLanguage}
-            />
-          }
-        />
-        <Route 
-          path="/material/:id" 
-          element={
-            <MaterialDetails 
-              language={language}
-              setLanguage={setLanguage}
-            />
-          }
-        />
-        <Route
-          path="/library"
-          element={
-            <Library
-              language={language}
-              text={text}
-            />
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/material/:id" element={<MaterialDetails/> } />
+        <Route path="/library" element={<Library />} />
       </Routes>
     </BrowserRouter>
   )

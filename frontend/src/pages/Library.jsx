@@ -1,11 +1,13 @@
 import { getLibrary } from "../utils/libraryStorage";
 
 import MaterialCard from "../components/MaterialsInfo/MaterialCard";
+import { useLanguage } from "../context/LanguageContext";
 
 
-function Library({ text }) {
+function Library() {
 
     const library = getLibrary()
+    const { text } = useLanguage()
 
     return (
 

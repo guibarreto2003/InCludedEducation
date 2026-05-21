@@ -3,7 +3,7 @@ import { useState } from 'react'
 import MaterialCard from '../components/MaterialsInfo/MaterialCard'
 import materials from '../data/materials'
 
-import translations from '../data/translations'
+import { useLanguage } from '../context/LanguageContext'
 
 import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
@@ -11,9 +11,9 @@ import filterMaterials from '../utils/filterMaterials'
 
 import '../App.css'
 
-function Home({language}) {
+function Home() {
   
-  const text = translations[language]
+  const { text } = useLanguage()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedFilter, setSelectedFilter] = useState('all')
   const filteredMaterials = filterMaterials(

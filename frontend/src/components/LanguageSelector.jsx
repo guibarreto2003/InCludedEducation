@@ -1,12 +1,11 @@
 import { useState } from "react";
-import translations from "../data/translations";
+import { useLanguage } from "../context/LanguageContext";
 import './LanguageSelector.css'
 
-function LanguageSelector ({ language, setLanguage}) {
+function LanguageSelector () {
     
     const [showLanguage, setShowLanguage] = useState(false)
-    
-    const text = translations[language]
+    const { language, setLanguage, text } = useLanguage()
 
     return (
         <div className='language-selector'>

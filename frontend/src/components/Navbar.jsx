@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 
 import LanguageSelector from "./LanguageSelector";
+import { useLanguage } from "../context/LanguageContext";
 
 import './Navbar.css'
 
-function Navbar ({
-    language,
-    setLanguage,
-    text
-}) {
+function Navbar () {
+    const { text } = useLanguage()
+
     return (
 
         <header className="navbar">
@@ -31,10 +30,7 @@ function Navbar ({
             </Link>
         </nav>
 
-            <LanguageSelector
-                language={language}
-                setLanguage={setLanguage}
-            />
+            <LanguageSelector />
         </header>
     )
 }
