@@ -68,7 +68,7 @@ function removeFromLibrary(id) {
         const library = getLibrary()
 
         const updatedLibrary = library.filter(
-            item => item.id != id
+            item => item.id !== id
         )
 
         localStorage.setItem(

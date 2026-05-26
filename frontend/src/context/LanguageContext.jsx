@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 import translations from "../data/translations";
 
@@ -22,11 +22,7 @@ function LanguageProvider({ children }) {
     )
 }
 
-function useLanguage() {
-    return useContext(LanguageContext)
-}
-
 export {
+    LanguageContext,
     LanguageProvider,
-    useLanguage
 }
