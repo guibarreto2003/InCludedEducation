@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import MaterialCard from '../components/MaterialsInfo/MaterialCard'
-import materials from '../data/materials'
+import { getAllMaterials } from '../services/materialServices'
 
-import { useLanguage } from '../context/LanguageContext'
+import useLanguage from '../context/useLanguage'
 
 import SearchBar from '../components/SearchBar'
 import FilterBar from '../components/FilterBar'
@@ -13,6 +13,7 @@ import '../App.css'
 
 function Home() {
   
+  const materials = getAllMaterials()
   const { text } = useLanguage()
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedFilter, setSelectedFilter] = useState('all')

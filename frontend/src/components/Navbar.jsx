@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import LanguageSelector from "./LanguageSelector";
-import { useLanguage } from "../context/LanguageContext";
+import useLanguage from "../context/useLanguage";
 
 import './Navbar.css'
 

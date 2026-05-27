@@ -1,7 +1,7 @@
 import { getLibrary } from "../utils/libraryStorage";
 
 import MaterialCard from "../components/MaterialsInfo/MaterialCard";
-import { useLanguage } from "../context/LanguageContext";
+import useLanguage from "../context/useLanguage";
 
 
 function Library() {
