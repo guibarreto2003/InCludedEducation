@@ -1,0 +1,76 @@
+Project IncludedEducation {
+  database_type: 'PostgreSQL'
+  Note: 'Initial relational model for the IncludedEducation platform.'
+}
+
+Table user_TABLE {
+  user_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique user identifier']
+  user_email varchar(255) [not null, unique, note: 'User email']
+  user_name varchar(120) [not null, note: 'User nickname']
+  user_password_hash text [not null, note: 'Hashed user password']
+  user_type varchar(50) [not null, default: 'STUDENT', note: 'Allowed values: ADMIN, STUDENT, TEACHER, MODERATOR']
+  created_at timestamp [not null, default: `now()`, note: 'Record creation timestamp']
+  updated_at timestamp [not null, default: `now()`, note: 'Last update timestamp']
+}
+
+Table author_TABLE {
+  author_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique author identifier']
+  user_id uuid [not null, unique, ref: > user_TABLE.user_id, note: 'Referenced user identifier']
+}
+
+Table image_TABLE {
+  image_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique image identifier']
+  image_url text [not null, note: 'Image storage URL']
+  image_alt varchar(255) [note: 'Alternative image description']
+  created_at timestamp [not null, default: `now()`, note: 'Record creation timestamp']
+  updated_at timestamp [not null, default: `now()`, note: 'Last update timestamp']
+}
+
+Table subject_TABLE {
+  subject_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique subject identifier']
+  subject_title varchar(100) [not null, unique, note: 'Subject title']
+  created_at timestamp [not null, default: `now()`, note: 'Record creation timestamp']
+  updated_at timestamp [not null, default: `now()`, note: 'Last update timestamp']
+}
+
+Table material_TABLE {
+  material_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique material identifier']
+  author_id uuid [not null, ref: > author_TABLE.author_id, note: 'Referenced author identifier']
+  image_id uuid [ref: > image_TABLE.image_id, note: 'Referenced image identifier']
+  subject_id uuid [not null, ref: > subject_TABLE.subject_id, note: 'Referenced subject identifier']
+  material_title varchar(255) [not null, note: 'Material title']
+  material_description text [not null, note: 'Material description']
+  material_content text [not null, note: 'Material content']
+  created_at timestamp [not null, default: `now()`, note: 'Record creation timestamp']
+  updated_at timestamp [not null, default: `now()`, note: 'Last update timestamp']
+}
+
+Table library_items_TABLE {
+  library_item_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'Unique library identifier']
+  user_id uuid [not null, ref: > user_TABLE.user_id, note: 'Referenced user identifier']
+  material_id uuid [not null, ref: > material_TABLE.material_id, note: 'Referenced material identifier']
+  is_favorite boolean [not null, default: false, note: 'User favorites materials']
+  saved_at timestamp [not null, default: `now()`, note: 'Record save timestamp']
+
+  indexes {
+    (user_id, material_id) [unique, name: 'composite_unique_user_material']
+  }
+}
+
+Table review_TABLE {
+  review_id uuid [pk, not null, default: `gen_random_uuid()`, note: 'User review about material']
+  user_id uuid [not null, ref: > user_TABLE.user_id, note: 'Referenced user identifier']
+  material_id uuid [not null, ref: > material_TABLE.material_id, note: 'Referenced material identifier']
+  rating integer [not null, default: 5, note: 'Material rating by review']
+  review_content text [not null, note: 'Review content of the material']
+  created_at timestamp [not null, default: `now()`, note: 'Record creation timestamp']
+  updated_at timestamp [not null, default: `now()`, note: 'Last update timestamp']
+
+  indexes {
+    (user_id, material_id) [unique, name: 'composite_unique_user_material_review']
+  }
+
+  checks {
+    `rating >= 1 AND rating <= 5` [name: 'check_rating_range']
+  }
+}
