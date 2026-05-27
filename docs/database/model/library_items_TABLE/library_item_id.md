@@ -1,0 +1,8 @@
+---
+field_type: UUID
+field_key: PK
+is_unique: "true"
+is_nullable: "false"
+default_value: gen_random_uuid()
+description: Unique library identifier
+---
